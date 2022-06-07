@@ -1,6 +1,7 @@
 <template>
     <div class="common-table">
         <el-table :data="tableData" height="90%" stripe>
+        <!-- 循环创建表单 -->
             <el-table-column 
             show-overflow-tooltip
             v-for="item in tableLabel" 
@@ -12,12 +13,14 @@
                 <span style="margin-left :10px">{{scope.row[item.prop]}}</span>
             </template>
             </el-table-column>
+            <!-- 对于表单的操作 -->
             <el-table-column label="操作" min-width="180">
                 <template slot-scope="scope">
                     <el-button size="mini" @click="handelEdit(scope.row)">编辑</el-button>
                     <el-button size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
                 </template>
             </el-table-column>
+
         </el-table>
         <el-pagination
         class="pager"

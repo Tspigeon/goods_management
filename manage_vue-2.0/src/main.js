@@ -40,7 +40,6 @@ Vue.component('el-pagination',Pagination)
 
 
 
-
 Vue.prototype.$http = http
 
 
